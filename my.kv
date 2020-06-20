@@ -1,0 +1,71 @@
+<Grid>:
+    username : name
+    password : pw
+    PageLayout:
+        size : root.width , root.height
+        GridLayout:
+            rows : 2
+            size : root.width, root.height
+
+            GridLayout:
+                id : two
+                cols : 2
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: 1, .5, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    text:'name'
+                TextInput:
+                    multiline : False
+                    id: name
+                Label:
+                    text : 'password'
+                    canvas.before:
+                        Color:
+                            rgba: 1, .5, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                TextInput:
+                    multiline : False
+                    id : pw
+
+            Button:
+                id : signin
+                text: 'sing in'
+                on_press : root.load(), root.normalize()
+        GridLayout:
+            rows : 2
+            size : root.width, root.height
+            GridLayout:
+                id : two
+                cols : 2
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: 1, .5, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    text:'name'
+                TextInput:
+                    multiline : False
+                    id: name
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: 1, .5, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    text:'password'
+                TextInput:
+                    multiline : False
+                    id : pw
+            Button:
+                id:submit
+                text: 'submit'
+                on_press : root.save(), root.normalize()
