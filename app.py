@@ -23,16 +23,53 @@ def encrypt(usr, pw):
     for i in usr:
         idx = abet.index(i)
         i = rabet[idx]
-        name.append(i)
+        name.append(i + str(idx))
 
     for i in pw:
         idx = abet.index(i)
         i = rabet[idx]
-        pasw.append(i)
+        pasw.append(i + str(idx))
     verification['name'] = ''.join(name)
     verification['pass'] = ''.join(pasw)
 
     return verification
+
+def decrypt(usr, psw):
+    name = []
+    pasw = []
+    decrypted = {}
+    usr = usr.lower()
+    psw = psw.lower()
+    for i in usr:
+        try:
+            idx = abet.index(i)
+            i = rabet[idx]
+            name.append(i)
+        except ValueError:
+            pass
+        except Exception as e:
+            print(e)
+
+    for i in psw:
+        try:
+            idx = abet.index(i)
+            i = rabet[idx]
+            pasw.append(i)
+        except ValueError:
+            pass
+        except exception as e:
+            print(e)
+    decrypted['name'] = ''.join(name)
+    decrypted['password'] = ''.join(pasw)
+    return decrypted
+
+#print(encrypt('srijan','dhungana'))
+print(decrypt('h18i17r8q9z0m13','w3s7f20m13t6z0m13z0'))
+
+
+
+
+
 
 
 
