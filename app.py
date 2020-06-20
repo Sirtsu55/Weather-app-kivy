@@ -10,11 +10,18 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
 import json
+import string
 
 
 class Grid(Widget):
+
+    def __init__(self):
+        abet = list(string.ascii_lowercase)
+        rabet = list(string.ascii_lowercase)
+        rabet.sort(reverse = True)
     username = ObjectProperty(None)
     password = ObjectProperty(None)
+
     def normal(self, instance):
         self.ids.signin.text = 'sign in'
         self.ids.submit.text = 'submit'
@@ -28,7 +35,8 @@ class Grid(Widget):
 
     def save(self):
         file = 'verification.json'
-        verification = {'name' : self.username.text, 'pass' : self.password.text}
+        verification = {'name' : self.username.text.lower(), 'pass' : self.password.text.lower()}
+        print(verification)
         if self.username.text and self.password.text:
             self.ids.signin.text = 'sign in'
             self.ids.submit.text = 'submit'
