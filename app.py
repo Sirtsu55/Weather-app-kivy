@@ -63,8 +63,6 @@ def decrypt(usr, psw):
     decrypted['password'] = ''.join(pasw)
     return decrypted
 
-#print(encrypt('srijan','dhungana'))
-print(decrypt('h18i17r8q9z0m13','w3s7f20m13t6z0m13z0'))
 
 
 
@@ -73,7 +71,8 @@ print(decrypt('h18i17r8q9z0m13','w3s7f20m13t6z0m13z0'))
 
 
 
-'''class Grid(Widget):
+
+class Grid(Widget):
 
     def __init__(self):
         abet = list(string.ascii_lowercase)
@@ -150,4 +149,4 @@ class MyApp(App):
 
 
 if __name__ == "__main__":
-    MyApp().run()'''
+    MyApp().run()
