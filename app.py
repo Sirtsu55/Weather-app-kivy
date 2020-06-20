@@ -11,9 +11,32 @@ from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
 import json
 import string
+abet = list(string.ascii_lowercase)
+rabet = list(string.ascii_lowercase)
+rabet.sort(reverse = True)
+def encrypt(usr, pw):
+    name = []
+    pasw = []
+    verification = {}
+    usr = usr.lower()
+    pw = pw.lower()
+    for i in usr:
+        idx = abet.index(i)
+        i = rabet[idx]
+        name.append(i)
+
+    for i in pw:
+        idx = abet.index(i)
+        i = rabet[idx]
+        pasw.append(i)
+    verification['name'] = ''.join(name)
+    verification['pass'] = ''.join(pasw)
+
+    return verification
 
 
-class Grid(Widget):
+
+'''class Grid(Widget):
 
     def __init__(self):
         abet = list(string.ascii_lowercase)
@@ -90,4 +113,4 @@ class MyApp(App):
 
 
 if __name__ == "__main__":
-    MyApp().run()
+    MyApp().run()'''
