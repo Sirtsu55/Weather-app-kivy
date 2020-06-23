@@ -1,6 +1,19 @@
-<Grid>:
-    username : name
-    password : pw
+
+<Manager>:
+    Menu:
+    Sample:
+
+
+
+
+
+
+<Menu>:
+    name : 'menu'
+    suusername : suname
+    supassword : supw
+    sipassword : sipw
+    siusername : siname
     PageLayout:
         size : root.width , root.height
         GridLayout:
@@ -20,7 +33,7 @@
                     text:'name'
                 TextInput:
                     multiline : False
-                    id: name
+                    id: siname
                 Label:
                     text : 'password'
                     canvas.before:
@@ -31,7 +44,7 @@
                             size: self.size
                 TextInput:
                     multiline : False
-                    id : pw
+                    id : sipw
 
             Button:
                 id : signin
@@ -53,7 +66,7 @@
                     text:'name'
                 TextInput:
                     multiline : False
-                    id: name
+                    id: suname
                 Label:
                     canvas.before:
                         Color:
@@ -64,8 +77,15 @@
                     text:'password'
                 TextInput:
                     multiline : False
-                    id : pw
+                    id : supw
             Button:
                 id:submit
                 text: 'submit'
                 on_press : root.save(), root.normalize()
+
+<Sample>:
+    name : 'main'
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text : 'hi'

@@ -7,6 +7,8 @@ abet = list(string.ascii_lowercase)
 rabet = list(string.ascii_lowercase)
 rabet.sort(reverse = True)
 def encrypt(usr, pw):
+    char = '! @ # &  –  : ; , ? / '
+    char = char.split(' ')
     name = []
     pasw = []
     verification = {}
@@ -15,12 +17,16 @@ def encrypt(usr, pw):
     for i in usr:
         idx = abet.index(i)
         i = rabet[idx]
-        name.append(i + str(random.randint(0,1000)))
+        for k in range(250):
+            name.append(str(random.randint(0,10)) + str(random.choice(char)))
+        name.append(i)
 
     for i in pw:
         idx = abet.index(i)
         i = rabet[idx]
-        pasw.append(i + str(random.randint(0,1000)))
+        for k in range(250):
+            pasw.append(str(random.randint(0,10))+ str(random.choice(char)))
+        pasw.append(i)
     verification['name'] = ''.join(name)
     verification['pass'] = ''.join(pasw)
 
